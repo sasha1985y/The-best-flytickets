@@ -8,73 +8,73 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav class="header-navigation">
-                <ul>
-                    <li>Корпоративным клиентам</li>
-                    <li>Авиабилеты<select name="tickets" id="tickets">
-                        <option value="0"></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select></li>
-                    <li>Справка<select name="blank" id="blank">
-                        <option value="0"></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select></li>
-                    <li><img src="./images/lang.svg" alt="lang"><select name="language" id="language">
-                        <option value="ru">Русский</option>
-                        <option value="en">Английский</option>
-                        <option value="de">Немецкий</option>
-                    </select></li>
-                </ul>
-            </nav>
-        </div>     
+        
+        <nav class="header-navigation">
+            <ul>
+                <li>Корпоративным клиентам</li>
+                <li>Авиабилеты<select name="tickets" id="tickets">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></li>
+                <li>Справка<select name="blank" id="blank">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></li>
+                <li><img src="./images/lang.svg" alt="lang"><select name="language" id="language">
+                    <option value="ru">Русский</option>
+                    <option value="en">Английский</option>
+                    <option value="de">Немецкий</option>
+                </select></li>
+            </ul>
+        </nav>
+             
     </header>
     <main>
-        <div class="container">
-            <section class="search">
-                <h1>Лучшие авиабилеты по самым низким ценам</h1>
-                <nav class="search-tabs">
-                    <!-- Табы для выбора типа билетов -->
-                    <input type="radio" id="flytickets" name="tickets" value="Авиабилеты" checked>
-                    <label for="flytickets">Авиабилеты</label>
+        
+        <section class="search">
+            <h1>Лучшие авиабилеты по самым низким ценам</h1>
+            <nav class="search-tabs">
+                <!-- Табы для выбора типа билетов -->
+                <input type="radio" id="flytickets" name="tickets" value="Авиабилеты" checked>
+                <label for="flytickets">Авиабилеты</label>
 
-                    <input type="radio" id="traintickets" name="tickets" value="Ж/д билеты">
-                    <label for="traintickets">Ж/д Билеты</label>
+                <input type="radio" id="traintickets" name="tickets" value="Ж/д билеты">
+                <label for="traintickets">Ж/д Билеты</label>
 
-                    <input type="radio" id="busses" name="tickets" value="Автобусы">
-                    <label for="busses">Автобусы</label>
+                <input type="radio" id="busses" name="tickets" value="Автобусы">
+                <label for="busses">Автобусы</label>
 
-                    <input type="radio" id="hotels" name="tickets" value="Отели">
-                    <label for="hotels">Отели</label>
+                <input type="radio" id="hotels" name="tickets" value="Отели">
+                <label for="hotels">Отели</label>
 
-                    <input type="radio" id="safe" name="tickets" value="Страхование">
-                    <label for="safe">Страхование</label>
-                </nav>
-                <form class="search-form">
-                    <!-- Форма поиска билетов -->
-                    <div class="search-item">
-                        <!-- <span>Откуда</span><br>
-                        <span>Варшава</span> -->
-                        <input type="text" placeholder="Откуда">
-                        <img src="./images/swap.svg" alt="Куда">
-                        <input type="text" placeholder="Куда">
-                    </div>
-                    <div class="search-item">
-                        <input type="date" placeholder="Туда">
-                        <input type="date" placeholder="Обратно">
-                    </div>
-                    <div class="search-item">
-                        <input type="text" placeholder="Пассажиры, класс">
-                    </div>
-                    <button type="submit">Найти</button>
-                </form>
-                <a href="#"><img src="./images/multiroute.svg" alt="Сложный маршрут"> Сложный маршрут</a>
-            </section>
-        </div>
+                <input type="radio" id="safe" name="tickets" value="Страхование">
+                <label for="safe">Страхование</label>
+            </nav>
+            <form class="search-form">
+                <!-- Форма поиска билетов -->
+                <div class="search-item">
+                    <!-- <span>Откуда</span><br>
+                    <span>Варшава</span> -->
+                    <input type="text" placeholder="Откуда">
+                    <img src="./images/swap.svg" alt="Куда">
+                    <input type="text" placeholder="Куда">
+                </div>
+                <div class="search-item">
+                    <input type="date" placeholder="Туда">
+                    <input type="date" placeholder="Обратно">
+                </div>
+                <div class="search-item">
+                    <input type="text" placeholder="Пассажиры, класс">
+                </div>
+                <button type="submit">Найти</button>
+            </form>
+            <a href="#"><img src="./images/multiroute.svg" alt="Сложный маршрут"> Сложный маршрут</a>
+        </section>
+        
         <!-- Блоки с предложениями -->
         <section class="promo-blocks">
             <div class="telegram-promo">
@@ -256,96 +256,96 @@
         </template>
     </main>
     <footer>
-        <div class="container">
-            <div class="payment-methods">
-                <!-- Платежные системы -->
-                <a href="#"><img src="./images/iata.svg" alt="iata"></a>
-                <a href="#"><img src="./images/pci.svg" alt="PCI"></a>
-                <a href="#"><img src="./images/visa.svg" alt="VISA"></a>
-                <a href="#"><img src="./images/mastercard.svg" alt="MASTER CARD"></a>
-            </div>
-            <div class="footer-info-cantries">
-                <h4>Страны</h4>
-                <ul>
-                    <li>Страна</li>
-                    <li>Страна</li>
-                    <li>Страна</li>
-                    <li>Страна</li>
-                    <li>Страна</li>
-                </ul>
-            </div>
-            <div class="footer-info-cities">
-                <h4>Города</h4>
-                <ul>
-                    <li>Город</li>
-                    <li>Город</li>
-                    <li>Город</li>
-                    <li>Город</li>
-                    <li>Город</li>
-                </ul>
-            </div>
-            <div class="footer-info-directions">
-                <h4>Направления</h4>
-                <ul>
-                    <li>Город-Город</li>
-                    <li>Город-Город</li>
-                    <li>Город-Город</li>
-                    <li>Город-Город</li>
-                    <li>Город-Город</li>
-                </ul>
-            </div>
-            <div class="footer-info-aeroports">
-                <h4>Аэропорты</h4>
-                <ul>
-                    <li>Аэропорт</li>
-                    <li>Аэропорт</li>
-                    <li>Аэропорт</li>
-                    <li>Аэропорт</li>
-                    <li>Аэропорт</li>
-                </ul>
-            </div>
-            <div class="footer-info-flight_companies">
-                <h4>Авиакомпании</h4>
-                <ul>
-                    <li>Авиакомпания</li>
-                    <li>Авиакомпания</li>
-                    <li>Авиакомпания</li>
-                    <li>Авиакомпания</li>
-                    <li>Авиакомпания</li>
-                </ul>
-            </div>
-            <div class="footer-info-our_services">
-                <h4>Наши сервисы</h4>
-                <ul>
-                    <li>Рейтинг авиакомпаний</li>
-                    <li>Сравнение цен</li>
-                    <li>Расписание рейсов</li>
-                    <li>Акции</li>
-                </ul>
-            </div>
-            <nav class="footer-navigation">
-                <!-- Ссылки на разделы -->
-                <a href="#">Все страны -></a>
-                <a href="#">Все города -></a>
-                <a href="#">Все направления -></a>
-                <a href="#">Все аэропорты -></a>
-                <a href="#">Все авиакомпании -></a>
-                <a href="#">Карта сайта -></a>
-            </nav>
-            <hr>
-            <button type="button">Партнёрская программа</button>
-            <div class="app-downloads">
-                <!-- Ссылки на приложения -->
-                <div><a href="#"><img src="./images/google-play-store.svg" alt="google-play-store"></a></div>
-                <div><a href="#"><img src="./images/apple-app-store.svg" alt="apple-app-store"></a></div>
-            </div>
-            <div class="social-links">
-                <!-- Социальные сети -->
-                <a href="#"><img src="./images/fb.svg" alt="F"></a>
-                <a href="#"><img src="./images/instagram.svg" alt="INST"></a>
-                <a href="#"><img src="./images/telegram.svg" alt="TEL"></a>
-            </div>
+        
+        <div class="payment-methods">
+            <!-- Платежные системы -->
+            <a href="#"><img src="./images/iata.svg" alt="iata"></a>
+            <a href="#"><img src="./images/pci.svg" alt="PCI"></a>
+            <a href="#"><img src="./images/visa.svg" alt="VISA"></a>
+            <a href="#"><img src="./images/mastercard.svg" alt="MASTER CARD"></a>
         </div>
+        <div class="footer-info-cantries">
+            <h4>Страны</h4>
+            <ul>
+                <li>Страна</li>
+                <li>Страна</li>
+                <li>Страна</li>
+                <li>Страна</li>
+                <li>Страна</li>
+            </ul>
+        </div>
+        <div class="footer-info-cities">
+            <h4>Города</h4>
+            <ul>
+                <li>Город</li>
+                <li>Город</li>
+                <li>Город</li>
+                <li>Город</li>
+                <li>Город</li>
+            </ul>
+        </div>
+        <div class="footer-info-directions">
+            <h4>Направления</h4>
+            <ul>
+                <li>Город-Город</li>
+                <li>Город-Город</li>
+                <li>Город-Город</li>
+                <li>Город-Город</li>
+                <li>Город-Город</li>
+            </ul>
+        </div>
+        <div class="footer-info-aeroports">
+            <h4>Аэропорты</h4>
+            <ul>
+                <li>Аэропорт</li>
+                <li>Аэропорт</li>
+                <li>Аэропорт</li>
+                <li>Аэропорт</li>
+                <li>Аэропорт</li>
+            </ul>
+        </div>
+        <div class="footer-info-flight_companies">
+            <h4>Авиакомпании</h4>
+            <ul>
+                <li>Авиакомпания</li>
+                <li>Авиакомпания</li>
+                <li>Авиакомпания</li>
+                <li>Авиакомпания</li>
+                <li>Авиакомпания</li>
+            </ul>
+        </div>
+        <div class="footer-info-our_services">
+            <h4>Наши сервисы</h4>
+            <ul>
+                <li>Рейтинг авиакомпаний</li>
+                <li>Сравнение цен</li>
+                <li>Расписание рейсов</li>
+                <li>Акции</li>
+            </ul>
+        </div>
+        <nav class="footer-navigation">
+            <!-- Ссылки на разделы -->
+            <a href="#">Все страны -></a>
+            <a href="#">Все города -></a>
+            <a href="#">Все направления -></a>
+            <a href="#">Все аэропорты -></a>
+            <a href="#">Все авиакомпании -></a>
+            <a href="#">Карта сайта -></a>
+        </nav>
+        <hr>
+        <button type="button">Партнёрская программа</button>
+        <div class="app-downloads">
+            <!-- Ссылки на приложения -->
+            <div><a href="#"><img src="./images/google-play-store.svg" alt="google-play-store"></a></div>
+            <div><a href="#"><img src="./images/apple-app-store.svg" alt="apple-app-store"></a></div>
+        </div>
+        <div class="social-links">
+            <!-- Социальные сети -->
+            <a href="#"><img src="./images/fb.svg" alt="F"></a>
+            <a href="#"><img src="./images/instagram.svg" alt="INST"></a>
+            <a href="#"><img src="./images/telegram.svg" alt="TEL"></a>
+        </div>
+
     </footer>
     <script src="./js/index.js"></script>
 </body>
