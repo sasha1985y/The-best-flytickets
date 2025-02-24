@@ -32,24 +32,24 @@
                 <a href="#">Авиабилеты</a>
                 <a href="#">Ж/д билеты</a>
                 <a href="#">Автобусы</a>
-                <a href="#">Отели</a>
+                <a href="#">Отели <i>-60%</i></a>
                 <a href="#">Страхование</a>
             </nav>
             <form class="search-form">
                 <!-- Форма поиска билетов -->
                 <div class="search-item">
-                    <!-- <span>Откуда</span><br>
-                    <span>Варшава</span> -->
-                    <input type="text" placeholder="Откуда">
+                    <label for="from">Откуда</label>
+                    <input type="text" id="from">
                     <img src="./images/swap.svg" alt="Куда">
-                    <input type="text" placeholder="Куда">
+                    <label for="where">Куда</label>
+                    <input type="text" id="where">
                 </div>
                 <div class="search-item">
                     <input type="date" placeholder="Туда">
                     <input type="date" placeholder="Обратно">
                 </div>
                 <div class="search-item">
-                    <input type="text" placeholder="Пассажиры, класс">
+                    <button type="button">Пассажиры, класс</button>
                 </div>
                 <button type="submit">Найти</button>
             </form>
@@ -199,7 +199,7 @@
                         старше 12 лет
                     </p>
                     <button class="decrement">-</button>
-                    <input type="number">
+                    <input type="text">
                     <button class="increment">+</button>
                 </div>
                 <div class="passenger-popup-item">
@@ -208,7 +208,7 @@
                         2-12 лет
                     </p>
                     <button class="decrement">-</button>
-                    <input type="number">
+                    <input type="text">
                     <button class="increment">+</button>
                 </div>
                 <div class="passenger-popup-item">
@@ -217,7 +217,7 @@
                         до 2 лет
                     </p>
                     <button class="decrement">-</button>
-                    <input type="number">
+                    <input type="text">
                     <button class="increment">+</button>
                 </div>
                 <p>Класс</p>
