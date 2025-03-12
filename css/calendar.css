@@ -1,0 +1,176 @@
+/* body {
+  font-family: "Roboto";
+  font-size: 16px;
+} */
+
+.calendar-container {
+  background: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.calendar {
+  position: relative;
+  --highlight-color: rgba(247, 64, 105, 1);
+  --highlight-transparent-color: color(srgb 0.9992 0.9106 0.9296);
+  --lighter-text-color: #666;
+  --font-size-smaller: 87.5%;
+  --font-size-smallest: 75%;
+}
+
+.calendar-header {
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin-bottom: 1.6em;
+}
+
+.calendar-label {
+  font-weight: 500;
+}
+
+.calendar-date-control {
+  background: var(--highlight-transparent-color);
+  border: 0;
+  border-radius: 5px;
+  color: var(--highlight-color);
+  font-size: var(--font-size-smaller);
+  line-height: 2.4rem;
+  width: 100%;
+}
+
+.calendar-month-control {
+  background: transparent;
+  border: 0;
+  font-size: 0;
+  position: absolute;
+}
+
+.calendar-month-control::before {
+  /* TODO: Заменить на картинку */
+  color: #bbb;
+  font-size: 16px;
+}
+
+.calendar-month-control-rev {
+  left: 0;
+}
+
+.calendar-month-control-rev::before {
+  content: "<";
+}
+
+.calendar-month-control-fwd {
+  right: 0;
+}
+
+.calendar-month-control-fwd::before {
+  content: ">";
+}
+
+.calendar-month-name {
+  font-size: var(--font-size-smaller);
+  text-align: center;
+  line-height: 2rem;
+  white-space: nowrap;
+}
+
+.calendar-dates {
+  align-items: flex-start;
+  display: flex;
+  gap: 25px;
+}
+
+.calendar-month-date-names,
+.calendar-month-dates-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-month-dates-days {
+  gap: 0.4rem 0;
+}
+
+.calendar-month-date-names li,
+.calendar-month-dates-days li {
+  font-size: var(--font-size-smaller);
+  line-height: 2.5rem;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.calendar-month-date-names li {
+  color: var(--lighter-text-color);
+  font-size: var(--font-size-smallest);
+  font-weight: 500;
+}
+
+.calendar-month-dates-day-past {
+  color: #ccc;
+}
+
+.calendar-month-dates-day-today {
+  background: #ccc;
+}
+
+.calendar-month-dates-day-today,
+.calendar-month-dates-day-from,
+.calendar-month-dates-day-to {
+  border-radius: 0 0 5px 5px;
+  position: relative;
+}
+
+.calendar-month-dates-day-today::before,
+.calendar-month-dates-day-from::before,
+.calendar-month-dates-day-to::before {
+  border-radius: 5px 5px 0 0;
+  font-size: 60%;
+  line-height: 1.5;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%
+}
+
+.calendar-month-dates-day-today::before {
+  background: #ccc;
+  content: "Сегодня";
+}
+
+.calendar-month-dates-day-from,
+.calendar-month-dates-day-to {
+  background: var(--highlight-color);
+  color: #fff;
+}
+
+.calendar-month-dates-day-from::before,
+.calendar-month-dates-day-to::before {
+  background: var(--highlight-color);
+}
+
+.calendar-month-dates-day-from::before {
+  content: "Туда"
+}
+
+.calendar-month-dates-day-to::before {
+  content: "Обратно"
+}
+
+.calendar-month-dates-day-in-range {
+  background: rgba(254, 234, 246, 1);
+}
+
+.calendar-note {
+  color: var(--lighter-text-color);
+  font-size: var(--font-size-smallest);
+  margin-top: 1rem;
+}
+
+.calendar-note::before {
+  content: "👉";
+  margin-right: 0.5rem;
+}
