@@ -1,0 +1,100 @@
+@media (min-width: 320px) and (max-width: 768px) {
+    
+    .calendar {
+        --font-size-smaller: 85%;
+        /* Уменьшаем текст для компактности */
+        --font-size-smallest: 75%;
+        /* Уменьшаем текст еще больше */
+    }
+
+    .calendar-header {
+        grid-template-columns: 1fr;
+        /* Одна колонка */
+        text-align: center;
+        /* Выравниваем текст по центру */
+        margin-bottom: 0.5em;
+        /* Уменьшаем отступ снизу */
+    }
+
+    .calendar-label {
+        font-size: 1.1em;
+        /* Немного уменьшаем размер метки */
+    }
+
+    .calendar-date-control {
+        line-height: 2rem;
+        /* Уменьшаем высоту кнопок для компактности */
+    }
+
+    .calendar-controls {
+        display: flex;
+        justify-content: space-between;
+        /* Разделяем кнопки на две стороны */
+        margin-top: 0.5em;
+        /* Уменьшаем отступ сверху */
+    }
+
+    .calendar-month-control {
+        font-size: 1.1em;
+        /* Уменьшаем размер текста кнопок управления месяцами */
+    }
+
+    .calendar-month-name {
+        font-size: 1em;
+        /* Уменьшаем размер названия месяца */
+        margin: 0.2em 0;
+        /* Уменьшаем отступы сверху и снизу */
+    }
+
+    .calendar-month-date-names,
+    .calendar-month-dates-days {
+        grid-template-columns: repeat(4, 1fr);
+        /* Уменьшаем количество колонок для маленьких экранов */
+        margin: 0;
+        /* Убираем внешние отступы */
+    }
+
+    .calendar-month-date-names li,
+    .calendar-month-dates-days li {
+        font-size: 0.8em;
+        /* Уменьшение шрифта для дней */
+        line-height: 1.2rem;
+        /* Уменьшаем высоту строки */
+        padding: 0.2rem;
+        /* Добавляем немного внутренних отступов */
+    }
+
+    /* Уменьшаем расстояние между calendar-month-date-names и calendar-month-dates-days */
+    .calendar-month-dates {
+        margin: 0.1rem 0;
+        /* Задаем маленький верхний и нижний отступ */
+    }
+
+    .calendar-month-dates-day-past {
+        color: #bbb;
+        /* Немного меняем цвет для лучшей читаемости */
+    }
+
+    .calendar-note {
+        font-size: 0.8em;
+        /* Уменьшаем размер заметок для компактности */
+        margin-top: 0.5rem;
+        /* Увеличиваем расстояние для заметок */
+    }
+
+    .calendar-note::before {
+        font-size: 1em;
+        /* Увеличиваем значок перед заметкой, чтобы он был пропорциональным */
+    }
+
+    .calendar-dates {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .calendar-container {
+        position: absolute;
+        top: 475px;
+    }
+}

@@ -1,0 +1,980 @@
+/* Responsive Styles */
+@media (min-width: 320px) and (max-width: 768px) {
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        z-index: 0;
+    
+        font-family: "Roboto";
+        font-size: 0.9rem;
+    }
+    
+    /* Header Styles */
+    header {
+        padding: 1% 0 1% 0;
+        justify-content: end;
+        gap: 1%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        background-color: var(--violet-color);
+        padding: 5px 10px;
+    }
+    
+    .header-navigation a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: var(--text-white);
+    }
+    
+    .lang-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .lang {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border-radius: 50px;
+        border: solid 0 var(--violet-color);
+        background-image: url('../images/lang.svg');
+        background-color: var(--violet-color);
+    }
+
+    .burger {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: solid 0 var(--violet-color);
+        background-image: url('../images/menu.svg');
+        background-color: var(--violet-color);
+    }
+
+    .lang:hover,
+    .burger:hover {
+        background-color: var(--violet-semy-color);
+    }
+    
+    .lang-content select {
+        padding: 5px;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        color: var(--text-white);
+    }
+    
+    /* Main Content Styles */
+    
+    .search {
+        height: 100vh;
+        background-color: var(--violet-color);
+        padding: 20px;
+        text-align: start;
+    }
+    
+    h1 {
+        margin-bottom: 40px;
+        text-align: start;
+        color: var(--text-salmon);
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+    
+    .search-tabs {
+        display: grid;
+        width: 81vw;
+        grid-template-areas:
+            "flytickets traintickets hotels"
+            "busses safe safe";
+        grid-template-columns: 27vw 27vw 27vw;
+        grid-template-rows: 35px;
+        justify-content: start;
+        margin-bottom: 10px;
+    }
+    
+    .search-tabs a {
+        text-decoration: none;
+        color: var(--text-white);
+        padding: 5px 11px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border: solid 0 var(--violet-color);
+        border-radius: 20px;
+        background-color: var(--violet-semy-color);
+        text-align: center;
+        font-size: 0.6rem;
+    }
+    
+    .hotels {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .discount {
+        background-color: var(--green-color);
+        padding: 1px 2px 2px 2px;
+        border-radius: 10px;
+    }
+    
+    .search-tabs a:hover {
+        color: var(--text-dark);
+        background-color: var(--light-background);
+    }
+    
+    .search-form {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+    }
+    
+    .lables {
+        position: absolute;
+        width:22vw;
+        display: grid;
+        grid-template-areas:
+            "label-from"
+            "label-where";
+        grid-template-columns: 16vw 10vw;
+        grid-template-rows: 20px;
+        gap: 10%;
+        background-color: var(--light-background);
+        border-radius: 5px 0 0 0;
+        margin-top: 37px;
+        opacity: 0.6;
+    }
+    
+    .search-item {
+        width: 85vw;
+        height: 30px;
+        display: grid;
+        grid-template-areas:
+            "from"
+            "where"
+            "search-fieldsets"
+            "passenger"
+            "find";
+        grid-template-columns: 85vw;
+    }
+
+    .label-where {
+        position: relative;
+        top: 6px;
+        right: 40px;
+    }
+
+    .label-where::before {
+        position: relative;
+        content: url('../images/Arrows_vertical.png');
+        top: 25px;
+        left: 210px;
+        padding-right: 4px;
+        transform: rotate(-90deg);
+    }
+    
+    .label-from {
+        padding: 5px 0 0 15px;
+        margin-top: 5px;
+    }
+    
+    .find {
+        position: relative;
+        width: 85vw;
+        margin-top: 20px;
+        padding: 10px 0;
+        margin-left: 0;
+        border: solid 0 var(--alarm-button-color);
+        color: var(--text-white);
+        background-color: var(--alarm-button-color);
+        border-radius: 5px;
+    }
+    
+    .passenger-ok-btn:hover,
+    .bus-tickets-promo button:hover,
+    .find:hover {
+        background-color: var(--violet-semy-color);
+        color: var(--alarm-button-color);
+    }
+    
+    .passenger-ok-btn:active,
+    .bus-tickets-promo button:active,
+    .find:active {
+        background-color: var(--link-color);
+        color: var(--text-dark);
+        box-shadow: 3px 3px 3px var(--text-dark);
+    }
+    
+    .passenger {
+        width: 85vw;
+        max-height: 50px;
+        border: solid 0 var(--text-white);
+        border-radius: 0 0 5px 5px;
+        margin-left: 0;
+    }
+    
+    .from {
+        border-radius: 5px 5px 0 0;
+        height: 25px;
+        margin-top: 36px;
+    }
+    
+    .to,
+    .back,
+    .passenger {
+        color: var(--text-gray);
+    }
+
+    .where {
+        margin-top: 0px;
+    }
+    
+    .from,
+    .where,
+    .to,
+    .back {
+        border-bottom: solid 1 var(--text-dark);
+        background-color: var(--light-background);
+    }
+
+    .to-label,
+    .back-label {
+        padding: 0 10px;
+    }
+    
+    .to,
+    .back,
+    .to input,
+    .back input {
+        position: relative;
+        padding: 0;
+        width: 50%
+    }
+
+    .back input {
+        margin-left: 30px;
+    }
+    
+    .back::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 25px;
+        height: 100%; /* Высота псевдоэлемента */
+        /* width: 1px; */
+        background-color: var(--text-gray); /* Цвет границы */
+        /* Установите нужную длину, например, 50% высоты родителя */
+        height: 30%; /* Или любую другую длину */
+    }
+    
+    .where,
+    .to,
+    .passenger {
+        border-left: solid 1px var(--text-gray);
+    }
+    
+    .from,
+    .where {
+        text-align: start;
+    }
+    
+    .from:focus,
+    .where:focus {
+        outline: none;
+    }
+    
+    .from-chooser-popup,
+    .where-chooser-popup,
+    .passenger-popup {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        overflow: hidden;
+        white-space: wrap;
+        text-overflow: ellipsis; /* Добавить многоточие */
+        flex-grow: 1; /* Позволяет этому элементу занимать все доступное пространство */
+    }
+    
+    /* Пассажирский попап */
+    
+    .passenger-popup {
+        width: 85vw;
+        height: 440px;
+        position: absolute;
+        left: 0;
+        top: 475px;
+        border-radius: 5px;
+        color: var(--text-gray);
+        z-index: 1;
+    }
+    
+    .passenger-popup p,
+    .passenger-popup .passenger-popup-item {
+        padding: 10px;
+    }
+    
+    .passenger-popup p::first-line {
+        color: var(--text-dark);
+    }
+    
+    .passenger-popup-item {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        vertical-align: middle;
+    }
+    
+    .passenger-popup-item input {
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: solid 0 var(--text-white);
+        outline: none;
+        text-align: center;
+    }
+    
+    .infants::after {
+        content: url('../images/help.svg');
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        margin-left: 10px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 2px var(--light-background);
+    }
+    
+    /* Скрыть стрелочки для input[type="number"] */
+    .passenger-popup-item input[type="number"]::-webkit-inner-spin-button,
+    .passenger-popup-item input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .passenger-popup-item input[type="number"] {
+        -moz-appearance: textfield; /* Для Firefox */
+    }
+    
+    .increment,
+    .decrement {
+        width: 45px;
+        height: 45px;
+        border: solid 0 var(--text-white);
+        border-radius: 45px;
+    }
+    
+    .increment:hover,
+    .decrement:hover {
+        background-color: var(--text-gray);
+    }
+    
+    .increment:active,
+    .decrement:active {
+        background-color: var(--violet-semy-color);
+        box-shadow: 3px 3px 3px var(--violet-color);
+    }
+    
+    .decrement {
+        background-color: var(--light-background);
+        opacity: 0.5;
+    }
+    
+    .increment {
+        background-color: var(--text-white);
+        opacity: 0.5;
+        box-shadow: 3px 3px 3px var(--text-gray);
+    }
+    
+    .increment::before {
+        content: url('../images/plus-thin.svg');
+    }
+    
+    .decrement::before {
+        content: url('../images/minus-thin.svg');
+    }
+    
+    .block-count {
+        position: absolute;
+        right: 20px;
+    }
+    
+    .passenger-radiobuttons {
+        text-align: start;
+        border-top: solid 1px var(--light-background);
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    
+    .passenger-radiobuttons b {
+        margin: 15px 0 5px 0;
+    }
+    
+    /* Скрываем стандартные радиокнопки */
+    .passenger-radiobuttons input[type="radio"] {
+        display: none; /* Скрываем элемент */
+    }
+    
+    /* Стили для метки */
+    .passenger-radiobuttons label {
+        display: inline-block; /* Делаем метку блочным элементом */
+        padding: 10px 5px; /* Отступы для создания пространства внутри кнопки */
+        border: 0 solid var(--alarm-button-color); /* Цвет рамки */
+        box-shadow: 3px 3px 3px var(--light-background);
+        border-radius: 20px; /* Закругленные края */
+        cursor: pointer; /* Указатель при наведении */
+        user-select: none; /* Запрет выделения текста */
+        transition: background-color 0.3s, border-color 0.3s; /* Плавный переход для фона и рамки */
+    }
+    
+    /* Стили для активного состояния */
+    .passenger-radiobuttons input[type="radio"]:checked + label {
+        background-color: var(--alarm-button-color); /* Цвет фона при выборе */
+        border-color: var(--alarm-button-color); /* Цвет рамки при выборе */
+        color: white; /* Цвет текста при выборе */
+    }
+    
+    .passenger-ok-btn {
+        margin-top: 20px;
+        text-align: center;
+        padding: 12px 130px;
+        border: solid 0 var(--alarm-button-color);
+        background-color: var(--alarm-button-color);
+        border-radius: 5px;
+        color: var(--text-white);
+    }
+    
+    /* Основная форма */
+    
+    .from-chooser-popup,
+    .where-chooser-popup {
+        position: absolute;
+        width: 40vw;
+        top: 0;
+        border: solid 0 var(--text-white);
+        border-radius: 5px;
+        box-shadow: 20px 20px 20px var(--text-gray);
+        z-index: 1;
+        padding: 0;
+    }
+
+    .from-chooser-popup {
+        height: 280px;
+        background-color: var(--ultra-violet-color);
+    }
+
+    .where-chooser-popup {
+        height: 280px;
+        left: 160px;
+        background-color: var(--text-salmon);
+    }
+    
+    .from-chooser-popup b, p, li, ul,
+    .where-chooser-popup b, p, li, ul {
+        padding: 7px 20px;
+        list-style: none;
+        text-align: start;
+        font-size: 0.7rem;
+    }
+    
+    .from-chooser-popup p::before, .from-chooser-popup li::before,
+    .where-chooser-popup p::before, .where-chooser-popup li::before {
+        content: url('../images/map-marker.svg');
+    }
+    
+    .from-chooser-popup p:hover, li:hover,
+    .where-chooser-popup p:hover, li:hover {
+        background-color: var(--light-background);
+    }
+    
+    .hard-way {
+        position: absolute;
+        font-size: 0.8rem;
+        top: 525px;
+        color: var(--text-white);
+        text-decoration: none;
+    }
+    
+    /* Секция телеграмма */
+    
+    .telegram-promo {
+        background-image: url('../images/bullet.svg');
+        background-repeat: no-repeat;
+        background-position: 96% bottom;
+        background-size: 19%;
+    }
+    
+    .telegram-promo a {
+        border: solid 0 var(--alarm-button-color);
+        color: var(--alarm-button-color);
+        background-color: var(--alarm-button-semi-color);
+        text-decoration: none;
+        border-radius: 5px;
+        width: 224px;
+        margin-right: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 12px 22px;
+    }
+    
+    .telegram-promo a:hover {
+        border: solid 1 var(--link-color);
+        color: var(--green-color);
+        background-color: var(--ultra-violet-color);
+        box-shadow: 3px 3px 3px var(--text-salmon);
+    }
+    
+    .telegram-promo span::before,
+    .bus-tickets-promo span::before {
+        content: url('../images/check-smooth.svg');
+        color: var(--text-gray);
+    }
+    
+    .telegram-promo span,
+    .bus-tickets-promo span {
+        color: var(--text-gray);
+        font-size: 0.9rem;
+    }
+    
+    .telegram-promo p {
+        padding: 6px 8px;
+    }
+    
+    .telegram-promo h2 {
+        margin: 6px 8px;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+    
+    .telegram-promo a {
+        font-weight: 500;
+        margin: 6px 8px;
+        padding: 15px 25px;
+        letter-spacing: 0.04rem;
+        font-size: 1rem;
+    }
+    
+    .bus-tickets-promo p {
+        margin: 10px 0;
+    }
+    
+    .bus-tickets-promo h2 {
+        margin: 30px 0 0 10px;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+    
+    .bus-tickets-promo button {
+        font-weight: 500;
+        margin: 0px 0 20px 10px;
+        padding: 5px 0px;
+        /* letter-spacing: 0.04rem; */
+        font-size: 0.9rem;
+    }
+    
+    /* Секция автобусных билетов */
+    
+    .bus-tickets-promo {
+        background-image: url('../images/bullet.svg');
+        background-repeat: no-repeat;
+        background-position: 100% 90%;
+        background-size: 32%;
+    }
+    .bus-tickets-promo button {
+        border: solid 0 var(--alarm-button-color);
+        color: var(--text-white);
+        background-color: var(--alarm-button-color);
+        text-decoration: none;
+        border-radius: 5px;
+        width: 142px;
+        margin-right: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 12px 22px;
+    }
+    
+    .grid-container-promo {
+        display: grid;
+        grid-template-areas:
+            "telegram-promo"
+            "bus-tickets-promo";
+        grid-template-columns: 1fr;
+        grid-template-rows: 180px;
+        background-color: var(--light-background);
+        justify-content: center;
+        gap: 2%;
+        padding: 1% 1% 1% 1%;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            "top-directions"
+            "top-airlines"
+            "sales"
+            "block-info";
+        grid-template-columns: 95vw;
+        grid-template-rows: 1fr;
+        background-color: var(--light-background);
+        justify-content: center;
+        gap: 2%;
+        padding: 1% 1% 8% 1%;
+    }
+    
+    .grid-item {
+        box-sizing: border-box;
+        box-shadow: 5px 5px 5px var(--text-gray);
+        background-color: white;
+        border: solid 0 white;
+        border-radius: 5px;
+        padding: 2%;
+        text-align: start;
+    }
+    
+    /* Популярные направления */
+    
+    .top-directions {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .flex-column div {
+        padding: 25px 0;
+        border-bottom: solid 1px var(--light-background);
+        max-width: 95vw;
+        overflow: hidden;
+        white-space: wrap;
+        text-overflow: ellipsis; /* Добавить многоточие */
+        flex-grow: 1; /* Позволяет этому элементу занимать все доступное пространство */
+    }
+    
+    .flex-column div:hover {
+        background-color: var(--light-background);
+    }
+    
+    .flex-column span {
+        padding: 0 51.7px;
+        font-weight: 300;
+    }
+    
+    .min-cost {
+        color: var(--alarm-button-color);
+    }
+    
+    /* Топ-10 авиакомпаний */
+    
+    .top-airlines-header {
+        display: flex;
+        gap: 100px;
+    }
+    
+    .top-airlines-header a {
+        text-decoration: none;
+        color: var(--link-color);
+        margin-top: 18px;
+    }
+    
+    .top-airlines ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .top-airlines li {
+        display: flex; /* Используем flexbox для выравнивания */
+        justify-content: space-between; /* Размещаем элементы по краям */
+        align-items: center; /* Выравниваем по центру */
+        padding: 10px 0;
+    }
+    
+    .airline-name {
+        flex-grow: 1; /* Позволяем этому элементу занимать доступное пространство */
+        padding-left: 15px;
+        white-space: nowrap; /* Запрещаем перенос строк */
+        overflow: hidden; /* Скрываем переполнение */
+        text-overflow: ellipsis; /* Добавляем многоточие для длинных названий */
+        color: var(--link-color);
+    }
+    
+    .airline-rate {
+        min-width: 50px; /* Устанавливаем минимальную ширину для рейтинга */
+    }
+    
+    .airline-rate::before {
+        content: url('../images/star.svg');
+        padding-right: 10px;
+    }
+    
+    /* Горящие распродажи авиарейсов */
+    
+    .sales small{
+        color: var(--text-gray);
+    }
+    
+    .sales b{
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+    
+    /* Частые вопросы */
+    
+    .faq {
+        height: 250px;
+    }
+    
+    .faq a {
+        text-decoration: none;
+        color: var(--link-color);
+        padding: 5px;
+    }
+    
+    .faq li:hover {
+        background-color: var(--text-white);
+        color: var(--violet-semy-color);
+    }
+    
+    /* Дополнительная информация */
+    
+    .additional-info {
+        height: 240px;
+        margin-top: 3%;
+        background-image: url('../images/subscribe-laptop.svg');
+        background-repeat: no-repeat;
+        background-color: var(--ultra-violet-color);
+        background-position: 88% 15%;
+        background-size: 26%;
+    }
+    
+    .additional-info h2 {
+        margin: 50px 20px 20px 20px;
+        font-weight: 300;
+        line-height: 1.6em;
+    }
+    
+    .sign {
+        display: none;
+    }
+    
+    .info-btn::before {
+        content: url('../images/chevron-smooth.svg');
+    }
+    
+    .info-btn {
+        width: 50px;
+        height: 50px;
+        background-color: var(--alarm-button-color);
+        border: solid 0 var(--alarm-button-color);
+        border-radius: 5px;
+        transform: rotate(-90deg);
+    }
+    
+    #email-input {
+        border: solid 1px var(--alarm-button-color);
+        height: 45px;
+        width: 260px;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #email-form::after {
+        position: relative;
+        content: url('../images/exclamation.svg');
+        right: 85px;
+        bottom: 10px;
+    }
+    
+    #email-form {
+        display: flex;
+        margin: 55px 0 0 20px;
+    }
+    
+    /* Footer Styles */
+    footer {
+        background-color: white;
+        color: var(--text-dark);
+    }
+    
+    footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .payment-methods,
+    .footer-info,
+    .app-downloads,
+    .social-links,
+    .footer-contacts {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding: 10px 0;
+        line-height: 1.6em;
+    }
+
+    .iata,
+    .pci,
+    .visa,
+    .mastercard {
+        width: 75px;
+        height: 22px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        white-space: wrap;
+    }
+
+    .iata {
+        background-image: url('../images/iata.svg');
+    }
+
+    .pci {
+        background-image: url('../images/pci.svg');
+    }
+
+    .visa {
+        background-image: url('../images/visa.svg');
+    }
+
+    .mastercard {
+        background-image: url('../images/mastercard.svg');
+    }
+
+    .payment-methods {
+        margin-top: 250px;
+        display: flex;
+        gap: 30px;
+    }
+
+    .select-info {
+        flex-direction: column;
+    }
+    
+    .select-info select {
+        width: 95vw;
+        padding: 10px 0;
+        border: solid 0 var(--text-gray);
+        background-color: white;
+        border-top: solid .1px var(--light-background);
+        border-bottom: solid .1px var(--light-background);
+    }
+
+    .select-info select:active,
+    .select-info select:focus {
+        outline: none;
+    }
+
+    .footer-info b {
+        display: none; /* Скрыть оригинальные лейблы */
+    }
+    
+    .footer-info li {
+        padding: 3px 0;
+        font-weight: 300;
+    }
+    
+    .footer-navigation {
+        display: none;
+        justify-content:start;
+        gap: 7%;
+    }
+    
+    .footer-navigation a {
+        text-decoration: none;
+        color: var(--link-color);
+    }
+    
+    .footer-info-our_services a {
+        text-decoration: none;
+        color: var(--text-dark);
+    }
+
+    .footer-contacts {
+        text-align: center;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-links {
+        margin-left: 30vw;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-links a:hover {
+        width: 37px;
+        height: 37px;
+        border-radius: 50px;
+        background-color: var(--light-background);
+        box-shadow: 3px 3px 3px var(--ultra-violet-color);
+    }
+
+    .app-downloads {
+        width: 100vw;
+        display: grid;
+        grid-template-areas: 
+            "partnership partnership"
+            "play-store app-store";
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 50px;
+    }
+    
+    .app-downloads a {
+        width: 130px;
+        height: 30px;
+    }
+
+    .play-store {
+        margin-left: 10px;
+        margin-top: 50px;
+        background-image: url('../images/google-play-store.svg');
+    }
+
+    .app-store {
+        margin-left: 40px;
+        background-image: url('../images/apple-app-store.svg');
+    }
+
+    .play-store,
+    .app-store {
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .play-store:hover,
+    .app-store:hover {
+        width: 133px;
+        height: 31px;
+        background-color: var(--link-color);
+        box-shadow: 3px 3px 3px var(--link-color);
+    }
+    
+    .partnership {
+        border: solid 2px var(--link-color);
+        color: var(--link-color);
+        text-decoration: none;
+        margin-left: 60px;
+        border-radius: 5px;
+        font-size: 0.6rem;
+    }
+    
+    .partnership:hover {
+        color: var(--violet-semy-color);
+        background-color: var(--ultra-violet-color);
+        box-shadow: 3px 3px 3px var(--text-salmon);
+    }
+}
+
+/* .example {
+    background-image: url('../images/02\ site-mobile.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4655px;
+} */
