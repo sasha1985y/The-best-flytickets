@@ -9,7 +9,10 @@ const monthContainer = document.querySelector(".calendar-dates");
 
 const ClassName = {
   DATE: "calendar-month-dates-day",
+  FROM: "calendar-month-dates-day-from",
+  IN_RANGE: "calendar-month-dates-day-in-range",
   PAST_DATE: "calendar-month-dates-day-past",
+  TO: "calendar-month-dates-day-to",
   TODAY: "calendar-month-dates-day-today",
 };
 
@@ -95,12 +98,24 @@ function hideCalendarDialog() {
   clearCalendarMonths();
 }
 
+function highlightRange(container, dateFrom, dateTo = null) {
+  const allDates = container.querySelectorAll(`.${ClassName.DATE}`);
+
+  for (date of allDates) {
+    const currentDate = new Date(date.dataset.date);
+
+    date.classList.toggle(ClassName.FROM, +currentDate === +dateFrom);
+    date.classList.toggle(ClassName.IN_RANGE, dateTo !== null && currentDate > dateFrom && currentDate < dateTo);
+    date.classList.toggle(ClassName.TO, dateTo !== null && +currentDate === +dateTo);
+  }
+}
+
 function initializeDatePicker(dateFromElement, dateToElement) {
   let isCalendarOpen = false;
 
   const selectedDates = {
-    FROM: null,
-    TO: null,
+    from: null,
+    to: null,
   };
 
   dateFromElement.onfocus = function () {
@@ -126,33 +141,128 @@ function initializeDatePicker(dateFromElement, dateToElement) {
       return;
     }
 
-    const selectedDate = new Date(evt.target.dataset.date);
+    const clickedDate = new Date(evt.target.dataset.date);
 
     // 1. Если не выбрана никакая дата, первая нажатая дата становится from
     // 2. Если дата выбрана, вторая нажатая дата становится 
     //   2.1. Если вторая нажатая дата больше или равна выбранной, она становится to
     //   2.2. Если вторая нажатая дата меньше выбранной, она становится from, а
     //        выбранная дата становится to
-    if (selectedDates.FROM === null) {
-      selectedDates.FROM = selectedDate;
+    // if (selectedDates.from === null) {
+    //   selectedDates.from = selectedDate;
+    // } else {
+    //   if (selectedDate > selectedDates.from) {
+    //     selectedDates.to = selectedDate;
+    //   } else {
+    //     selectedDates.to = selectedDates.from;
+    //     selectedDates.from = selectedDate;
+    //   }
+    // }
+
+    if (selectedDates.from === null && selectedDates.to === null) {
+      // Выбрано ноль дат — подсвечиваем то, на что навели
+      selectedDates.from = clickedDate;
+      selectedDates.to = null;
+    } else if (selectedDates.from !== null && selectedDates.to === null) {
+      // Выбрана одна дата
+      // - from - меньшая дата из hoveredDate или selectedDates.from
+      // - to — большая дата из hoveredDate или selectedDates.from
+
+      selectedDates.from = +clickedDate < +selectedDates.from ? clickedDate : selectedDates.from;
+      selectedDates.to = +clickedDate > +selectedDates.from ? clickedDate : selectedDates.from;
     } else {
-      if (selectedDate > selectedDates.FROM) {
-        selectedDates.TO = selectedDate;
-      } else {
-        selectedDates.TO = selectedDates.FROM;
-        selectedDates.FROM = selectedDate;
-      }
+      selectedDates.from = +clickedDate < +selectedDates.to ? clickedDate : selectedDates.from;
+      selectedDates.to = +clickedDate >= +selectedDates.to ? clickedDate : selectedDates.to;
     }
 
-    if (selectedDates.FROM !== null && selectedDates.TO !== null) {
-      dateFromElement.value = selectedDates.FROM.toLocaleString("ru-RU");
-      dateToElement.value = selectedDates.TO.toLocaleString("ru-RU");
+    if (selectedDates.from !== null && selectedDates.to !== null) {
+      dateFromElement.value = selectedDates.from.toLocaleString("ru-RU");
+      dateToElement.value = selectedDates.to.toLocaleString("ru-RU");
 
-      hideCalendarDialog();
-      isCalendarOpen = false;
+      // hideCalendarDialog();
+      // isCalendarOpen = false;
+    }
+
+    highlightRange(monthContainer, selectedDates.from, selectedDates.to);
+  }
+
+  monthContainer.onmouseover = function (evt) {
+    const isSelectableDateHovered = (
+      evt.target.classList.contains(ClassName.DATE) &&
+      !evt.target.classList.contains(ClassName.PAST_DATE)
+    );
+
+    if (!isSelectableDateHovered) {
+      return;
+    }
+
+    const hoveredDate = new Date(evt.target.dataset.date);
+
+    if (selectedDates.from === null && selectedDates.to === null) {
+      // Выбрано ноль дат — подсвечиваем то, на что навели
+      highlightRange(monthContainer, hoveredDate);
+    } else if (selectedDates.from !== null && selectedDates.to === null) {
+      // Выбрана одна дата
+      // - from - меньшая дата из hoveredDate или selectedDates.from
+      // - to — большая дата из hoveredDate или selectedDates.from
+      highlightRange(
+        monthContainer,
+        +hoveredDate < +selectedDates.from ? hoveredDate : selectedDates.from,
+        +hoveredDate > +selectedDates.from ? hoveredDate : selectedDates.from,
+      );
+    } else {
+      // Выбрано две даты
+      // - from меньшая дата из hoveredDate или selectedDates.from
+      // - to — большая дата из hoveredDate или selectedDates.to
+      highlightRange(
+        monthContainer,
+        +hoveredDate < +selectedDates.to ? hoveredDate : selectedDates.from,
+        +hoveredDate >= +selectedDates.to ? hoveredDate : selectedDates.to,
+      );
     }
   }
 }
+
+
+// — Визуализация выбранных дат
+//   — [x] Если нет выбранных дат — ничего не подсвечено по умолчанию
+//   — [ ] Если нет выбранных дат при перемещении курсора по полю мы подсвечиваем дату
+//   — [x] Если выбрана одна дата, ее блок подсвечен
+//   — [ ] Если выбрана одна дата при перемещении курсора по полю мы подсвечиваем
+//     диапазон до той даты, на которую наведен курсор
+//   — [x] Если выбрано две даты — подсветить обе и диапазон
+//   — [-] Если выбрана одна дата без обратного билета, подсвечена только она
+// 
+//     при открытии
+//     по клику на дату
+//     при перемещении курсора
+
+// — Инициализация календаря с уже выбранными датами
+// — Закрытие календаря
+// — Одна дата
+// — Переключение месяцев
+
+const closeCalendarBtn = document.querySelector(".close-calendar-btn");
+
+closeCalendarBtn.addEventListener('click', () => {
+  hideCalendarDialog();
+  initializeDatePicker(
+    document.querySelector("#date-from"),
+    document.querySelector("#date-to"),
+  );
+});
+
+// Закрытие попапа по нажатию клавиши Esc
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    hideCalendarDialog();
+    initializeDatePicker(
+      document.querySelector("#date-from"),
+      document.querySelector("#date-to"),
+    );
+  }
+});
+
 
 initializeDatePicker(
   document.querySelector("#date-from"),
