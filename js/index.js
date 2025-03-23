@@ -1,22 +1,58 @@
+function showPopup(popup) {
+    popup.open = true;
+}
+
+function hidePopup(popup) {
+    popup.open = false;
+}
+
+function hideEscPopup(popup, callback) {  
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            callback(popup);
+        }
+    });
+}
+
+//Попапы ввода города и просмотра ближайших аэропортов
+
 const fromChooserInput = document.querySelector('.from');
-const fromChooserPopup = document.querySelector('.from-chooser-popup');
-const hardWay = document.querySelector('.hard-way');
+let fromChooserPopup = document.querySelector('.from-chooser-popup');
+
 fromChooserInput.addEventListener('click', () => {
-    fromChooserPopup.classList.toggle('visually-hidden');
+    showPopup(fromChooserPopup);
     hardWay.classList.toggle('z-0');
     hardWay.classList.toggle('z-1');
 });
 
+hideEscPopup(fromChooserPopup, hidePopup);
+
 const whereChooserInput = document.querySelector('.where');
-const whereChooserPopup = document.querySelector('.where-chooser-popup');
+let whereChooserPopup = document.querySelector('.where-chooser-popup');
+const hardWay = document.querySelector('.hard-way');
+
 whereChooserInput.addEventListener('click', () => {
-    whereChooserPopup.classList.toggle('visually-hidden');
+    showPopup(whereChooserPopup);
 });
 
+hideEscPopup(whereChooserPopup, hidePopup);
+
+
+//Пассажирский попап
+
 const passengerBtn = document.querySelector('.passenger');
-const passengerPopup = document.querySelector('.passenger-popup');
+const passengerOkBtn = document.querySelector('.passenger-ok-btn');
+let passengerPopup = document.querySelector('.passenger-popup');
+
+hideEscPopup(passengerPopup, hidePopup);
+
+
 passengerBtn.addEventListener('click', () => {
-    passengerPopup.classList.toggle('visually-hidden');
+    showPopup(passengerPopup);
+})
+
+passengerOkBtn.addEventListener('click', () => {
+    hidePopup(passengerPopup);
 });
 
 //Изменяем списки футера на селекты
