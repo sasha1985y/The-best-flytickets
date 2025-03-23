@@ -468,7 +468,7 @@
 
     .where-chooser-popup {
         height: 280px;
-        left: 160px;
+        margin-left: 150px;
         background-color: var(--text-salmon);
     }
     
