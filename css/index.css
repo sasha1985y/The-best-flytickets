@@ -460,7 +460,8 @@ h2 {
 .from-chooser-popup {
     position: absolute;
     width: 40vw;
-    bottom: 44px;
+    margin-left: 20px;
+    bottom: 30px;
     border: solid 0 var(--text-white);
     border-radius: 5px;
     box-shadow: 20px 20px 20px var(--text-gray);
@@ -471,8 +472,8 @@ h2 {
 .where-chooser-popup {
     position: absolute;
     width: 40vw;
-    bottom: 44px;
-    left: 294px;
+    bottom: 30px;
+    margin-left: 300px;
     border: solid 0 var(--text-white);
     border-radius: 5px;
     box-shadow: 20px 20px 20px var(--text-gray);
