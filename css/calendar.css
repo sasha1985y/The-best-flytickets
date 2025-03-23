@@ -19,6 +19,16 @@
   --font-size-smallest: 75%;
 }
 
+.close-calendar-btn {
+  position: absolute;
+  right: 2%;
+  z-index: 1;
+}
+
+.close-calendar-btn::before {
+  content: url('../images/close-smooth.svg');
+}
+
 .calendar-header {
   align-items: baseline;
   display: grid;
