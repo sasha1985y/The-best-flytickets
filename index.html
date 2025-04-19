@@ -58,7 +58,7 @@
                     <button type="submit" class="find">Найти</button>
                 </div>
                 <!--попап с настройками для пассажиров-->
-                <div class="passenger-popup visually-hidden">
+                <dialog class="passenger-popup">
                     <form class="passenger-template">
                         <b>Максимум 9 пассажиров</b>
                         <div class="passenger-popup-item">
@@ -113,8 +113,8 @@
                         </div>
                         <button type="button" class="passenger-ok-btn"><b>OK</b></button>
                     </form>
-                </div>
-                <div class="from-chooser-popup visually-hidden">
+                </dialog>
+                <dialog class="from-chooser-popup">
                     <!-- <button type="button" id="closer">Закрыть</button> -->
                     <b>Выбранный город
                     <p class="city-from">Варшава</p>
@@ -123,9 +123,9 @@
                         <li>Кишинёв</li>
                         <li>Балице</li>
                     </ul>
-                </div>
+                </dialog>
     
-                <div class="where-chooser-popup visually-hidden">
+                <dialog class="where-chooser-popup">
                     <b>Выбранный город
                     <p class="city-where">Варшава</p>
                     <b>Ближайшие аэропорты</b>
@@ -133,12 +133,13 @@
                         <li>Кишинёв</li>
                         <li>Балице</li>
                     </ul>
-                </div>
+                </dialog>
 
                 <!--Calendar-->
 
             </form>
             <dialog class="calendar-container">
+                <button class="close-calendar-btn"></button>
                 <div class="calendar">
                     <div class="calendar-header">
                         <div class="calendar-label">Выберите дату туда</div>
@@ -410,8 +411,6 @@
             <div class="app-downloads">
                 <!-- Ссылки на приложения -->
                 <a href="#" class="partnership">Партнёрская программа</a>
-                <!-- <a href="#" class="play-store"><img src="./images/google-play-store.svg" alt="google-play-store"></a>
-                <a href="#" class="app-store"><img src="./images/apple-app-store.svg" alt="apple-app-store"></a> -->
                 <a href="#" class="play-store"></a>
                 <a href="#" class="app-store"></a>
             </div>
@@ -425,7 +424,7 @@
 
     </footer>
     <div class="example"></div>
-    <script src="./js/index.js" type="module"></script>
-    <script src="./js/calendar.js" type="module"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/calendar.js"></script>
 </body>
 </html>
